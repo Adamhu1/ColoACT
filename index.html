@@ -241,48 +241,38 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">ColoACT: Multi-Cue Action Chunking for Smooth Autonomous Colon Navigation on a Self-Propelled Endoscopic Robot</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Jian Hu</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Shujing He</a><sup>1</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Leixin Chang</a><sup>2</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Zongze Li</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="FIFTH AUTHOR PERSONAL LINK" target="_blank">Ding Huang</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="SIXTH AUTHOR PERSONAL LINK" target="_blank">Chaoyang Shi</a><sup>2</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="SEVENTH AUTHOR PERSONAL LINK" target="_blank">Chengzhi Hu</a><sup>*</sup><sup>1</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">1 Southern University of Science and Technology<br>2 Zhejiang University<br>3 Tianjin University<br>IROS 2026</span>
+
                   </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+                   
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
@@ -314,24 +304,6 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -341,7 +313,7 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Autonomous colonoscopic navigation can reduce operator burden and the risk of loop formation or tissue trauma, but remains challenging due to deformable anatomy, weak-texture and specular endoscopic visuals, and contact-rich viscoelastic interactions. Existing methods either rely on geometry-driven pipelines, which are efficient and interpretable yet brittle due to manually engineered features and switching logic, or adopt learning-based policies, whose inferred depth/geometry can become temporally inconsistent or overly smooth under weak texture and specular highlights while simulation-trained variants (e.g., deep reinforcement learning) may further suffer from a sim-to-real gap. We propose ColoACT, an autonomous navigation system that integrates an RGB-D-E based Action Chunking Transformer policy (ColoACT policy) for a compact self-propelled Bevel-Gear-Based Endoscopic Robot (BGER). The ColoACT policy augments RGB with estimated relative depth and a gradient-based pseudo-elevation map to enhance fold-ridge saliency and other high-frequency geometric cues, and enables smooth continuous control of the BGER by predicting overlapping action chunks and fusing them via temporal ensembling. In different ex-vivo porcine colons (approximately 60 cm), our system achieves success rates of 85.4% and 72.5% in straight and curved segments, respectively, and achieves 70% success in 90-degree turns and 60% in double-bend sequences, with feasibility further demonstrated in challenging triple-bend segments.
           </p>
         </div>
       </div>
@@ -351,45 +323,107 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+
+
+
+<!-- Method -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Method and Design</h2>
+        <div class="content has-text-centered">
+          <figure class="image publication-banner">
+            <img src="static/images/Figure 1.1.png" alt="ColoACT method figure" loading="lazy" />
+          </figure>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Autonomous colon navigation requires a policy that can reason from weak-texture, specular endoscopic images while producing smooth commands under contact-rich tissue interaction. ColoACT treats colon navigation as a multi-cue, chunk-level control problem. It augments RGB observations with estimated relative depth and pseudo-elevation cues, and uses an Action Chunking Transformer policy to predict short future motion chunks. Overlapping predictions are fused through temporal ensembling, enabling stable real-time actuation of a compact self-propelled endoscopic robot.
+          </p>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End Method -->
+
+
+
+<!-- Attention Video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Attention Map</h2>
+          <div class="publication-video">
+            <video autoplay controls muted loop playsinline preload="metadata" style="width: 100%; height: auto;">
+              <source src="static/videos/Attention.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Attention Video -->
+
+
+
+
+<!-- Success Rate -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Result</h2>
+        <div class="content has-text-centered">
+          <figure class="image publication-banner">
+            <img src="static/images/success rate.png" alt="ColoACT success rate figure" loading="lazy" />
+            <figcaption class="subtitle has-text-justified" style="margin-top: 0.75rem;">
+              (a) RGB-D-E based BC and (b) ColoACT policy. Inset photo shows the inside texture of the colon, Scale bar: 5 mm. The normalized linear velocity of RGB-D-E based BC policy and ColoACT policy when facing the weak texture are shown beside.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Autonomous colon navigation requires a policy that can reason from weak-texture, specular endoscopic images while producing smooth commands under contact-rich tissue interaction. ColoACT treats colon navigation as a multi-cue, chunk-level control problem. It augments RGB observations with estimated relative depth and pseudo-elevation cues, and uses an Action Chunking Transformer policy to predict short future motion chunks. Overlapping predictions are fused through temporal ensembling, enabling stable real-time actuation of a compact self-propelled endoscopic robot.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Success Rate -->
+
+
+
+<!-- result -->
+<section class="section hero is-light">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Comparison</h2>
+        <div class="content has-text-centered">
+          <figure class="image publication-banner">
+            <img src="static/images/Compare.png" alt="ColoACT result figure" loading="lazy" />
+            <figcaption class="subtitle has-text-justified" style="margin-top: 0.75rem;">
+              (a) RGB-D-E based BC and (b) ColoACT policy. Inset photo shows the inside texture of the colon, Scale bar: 5 mm. The normalized linear velocity of RGB-D-E based BC policy and ColoACT policy when facing the weak texture are shown beside.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            The result section can summarize the main experimental outcomes, including navigation success rates, robustness in curved segments, and representative qualitative comparisons. You can replace this text with your final result description and use your own figure to highlight the most important findings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Result -->
 
 
 
@@ -397,15 +431,15 @@
 <!-- Youtube video -->
 <section class="hero is-small is-light">
   <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+    <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
+          <h2 class="title is-3">Overall Effects</h2>
           <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <video autoplay controls muted loop playsinline preload="metadata" style="width: 100%; height: auto;">
+              <source src="static/videos/Demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
@@ -415,58 +449,14 @@
 <!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
 
 
 
 
 
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
 
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
+
 
 
 
@@ -481,11 +471,11 @@
         </button>
       </div>
       <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+  title={ColoACT: Multi-Cue Action Chunking for Smooth Autonomous Colon Navigation on a Self-Propelled Endoscopic Robot},
+  author={Jian Hu, Shujing He, Leixin Chang, Zongze Li, Ding Huang, Chaoyang Shi, and Chengzhi Hu},
+  journal={arxiv},
+  year={2026},
+  url={}
 }</code></pre>
     </div>
 </section>

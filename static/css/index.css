@@ -381,6 +381,9 @@ code {
   font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace !important;
 }
 
+figcaption.subtitle {
+  font-style: normal !important;
+}
 /* BibTeX Section Improvements */
 .bibtex-header {
   display: flex;
