@@ -754,3 +754,44 @@ a:focus {
 
 
 
+/* ===== Project page media + caption style ===== */
+
+.project-figure {
+  margin: 1.5rem auto 0 auto;
+  text-align: center;
+}
+
+.project-media-frame {
+  overflow: hidden;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  line-height: 0;
+}
+
+.project-media-frame img,
+.project-media-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-caption {
+  max-width: 900px;
+  margin: 0.85rem auto 0 auto;
+  padding: 0 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #5f6673;
+  text-align: center;
+}
+
+.project-caption strong {
+  color: #2f3542;
+  font-weight: 600;
+}
+
+/* For captions that need a bit more explanation */
+.project-caption.long-caption {
+  text-align: justify;
+}

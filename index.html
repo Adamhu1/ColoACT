@@ -333,8 +333,14 @@
       <div class="column is-full">
         <h2 class="title is-3">Method and Design</h2>
         <div class="content has-text-centered">
-          <figure class="image publication-banner">
-            <img src="static/images/Figure 1.1.png" alt="ColoACT method figure" loading="lazy" />
+          <figure class="project-figure">
+            <div class="project-media-frame">
+              <img src="static/images/Figure 1.1.png" alt="ColoACT method figure" loading="lazy" />
+            </div>
+            <figcaption class="project-caption long-caption">
+              <strong>System and Method Overview.</strong>
+              ColoACT integrates RGB-D-E perception, action-chunking control, and a compact self-propelled BGER platform. RGB images are augmented with estimated depth and pseudo-elevation cues, while the ACT policy predicts overlapping future action chunks that are fused through temporal ensembling into smooth velocity commands for robot actuation.
+            </figcaption>
           </figure>
         </div>
         <div class="content has-text-justified">
@@ -356,12 +362,17 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Attention Map</h2>
+          <h2 class="title is-3">Attention Analysis</h2>
           <div class="publication-video">
             <video autoplay controls muted loop playsinline preload="metadata" style="width: 100%; height: auto;">
               <source src="static/videos/Attention.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
+          </div>
+          <div class="content has-text-justified" style="margin-top: 1rem;">
+            <p>
+               We analyze the learned policy behavior from both latent-space and visual-attention perspectives. The CVAE latent space forms a structured manifold aligned with steering direction, suggesting that the policy learns meaningful motion semantics rather than merely memorizing training samples.To interpret visual decision-making, we apply Grad-CAM to the visual backbone. During turning, the strongest response concentrates on the distant navigable lumen, while secondary activation appears along nearby haustral fold ridges. This indicates that ColoACT learns a geometry-aware navigation strategy that balances target-directed motion with boundary awareness.
+            </p>
           </div>
         </div>
       </div>
@@ -373,24 +384,27 @@
 
 
 
-<!-- Success Rate -->
+<!-- Result -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <h2 class="title is-3">Result</h2>
         <div class="content has-text-centered">
-          <figure class="image publication-banner">
-            <img src="static/images/success rate.png" alt="ColoACT success rate figure" loading="lazy" />
-            <figcaption class="subtitle has-text-justified" style="margin-top: 0.75rem;">
-              (a) RGB-D-E based BC and (b) ColoACT policy. Inset photo shows the inside texture of the colon, Scale bar: 5 mm. The normalized linear velocity of RGB-D-E based BC policy and ColoACT policy when facing the weak texture are shown beside.
+          <figure class="project-figure">
+            <div class="project-media-frame">
+              <img src="static/images/success rate.png" alt="ColoACT success rate figure" loading="lazy" />
+            </div>
+            <figcaption class="project-caption long-caption">
+              <strong>Ex-Vivo Autonomous Navigation Results.</strong>
+              ColoACT achieves the highest success rates among the tested input configurations, reaching 85.4% in straight and 72.5% in curved ex-vivo porcine colon segments.
+              The results demonstrate the benefit of combining RGB-D-E perception with action chunking and temporal ensembling for smooth closed-loop navigation.
             </figcaption>
           </figure>
         </div>
         <div class="content has-text-justified">
           <p>
-            Autonomous colon navigation requires a policy that can reason from weak-texture, specular endoscopic images while producing smooth commands under contact-rich tissue interaction. ColoACT treats colon navigation as a multi-cue, chunk-level control problem. It augments RGB observations with estimated relative depth and pseudo-elevation cues, and uses an Action Chunking Transformer policy to predict short future motion chunks. Overlapping predictions are fused through temporal ensembling, enabling stable real-time actuation of a compact self-propelled endoscopic robot.
-          </p>
+              ColoACT is evaluated on unseen ex-vivo porcine colons to test autonomous navigation under realistic tissue geometry and contact-rich interactions. In straight and curved segments, the full RGB-D-E ACT policy achieves the strongest performance among all tested input configurations, reaching 85.4% and 72.5% success rates, respectively. Compared with a non-temporal RGB-D-E behavior cloning baseline, ColoACT produces substantially smoother motion. The BC baseline often becomes unstable in weak-texture regions, while ColoACT maintains continuous forward navigation by combining action chunking with temporal ensembling.
         </div>
       </div>
     </div>
@@ -400,30 +414,34 @@
 
 
 
-<!-- result -->
+<!-- Comparison -->
 <section class="section hero is-light">
-
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <h2 class="title is-3">Comparison</h2>
         <div class="content has-text-centered">
-          <figure class="image publication-banner">
-            <img src="static/images/Compare.png" alt="ColoACT result figure" loading="lazy" />
-            <figcaption class="subtitle has-text-justified" style="margin-top: 0.75rem;">
-              (a) RGB-D-E based BC and (b) ColoACT policy. Inset photo shows the inside texture of the colon, Scale bar: 5 mm. The normalized linear velocity of RGB-D-E based BC policy and ColoACT policy when facing the weak texture are shown beside.
+          <figure class="project-figure">
+            <div class="project-media-frame">
+              <img src="static/images/Compare.png" alt="BC and ColoACT comparison in weak-texture colon" loading="lazy" />
+            </div>
+            <figcaption class="project-caption long-caption">
+              <strong>RGB-D-E BC vs. ColoACT in Weak-Texture Colon.</strong>
+              The step-wise behavior cloning baseline produces unstable velocity commands and fails to move forward reliably in weak-texture regions.
+              In contrast, ColoACT uses action chunking and temporal ensembling to maintain smooth forward motion and stable velocity output.
             </figcaption>
           </figure>
         </div>
         <div class="content has-text-justified">
           <p>
-            The result section can summarize the main experimental outcomes, including navigation success rates, robustness in curved segments, and representative qualitative comparisons. You can replace this text with your final result description and use your own figure to highlight the most important findings.
+            This comparison highlights the benefit of temporal action modeling under weak-texture conditions. The RGB-D-E behavior cloning baseline predicts actions step by step and often produces erratic commands when visual cues are ambiguous. As a result, the robot may fail to move forward reliably. In contrast, ColoACT predicts short future action chunks and fuses overlapping predictions through temporal ensembling. This allows the robot to maintain smooth and continuous forward motion even in feature-poor colonic regions, reducing high-frequency control fluctuations and improving closed-loop stability.
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End Result -->
+<!-- End Comparison -->
 
 
 
@@ -440,6 +458,11 @@
               <source src="static/videos/Demo.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
+          </div>
+          <div class="content has-text-justified" style="margin-top: 1rem;">
+            <p>
+              ColoACT is further evaluated in highly tortuous ex-vivo colon anatomies, including sharp 90-degree turns, double-bend sequences, and challenging triple-bend segments. These scenarios require the robot to continuously adapt its steering direction while maintaining smooth actuation. The angular velocity profiles show strong correspondence with the physical curvature of the colon. In double-bend and triple-bend sequences, the policy produces smooth polarity changes and sustained steering commands, demonstrating its ability to handle continuous geometric constraints beyond simple straight or single-turn navigation.
+            </p>
           </div>
         </div>
       </div>
