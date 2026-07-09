@@ -356,30 +356,33 @@
 
 
 
-<!-- Attention Video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Attention Analysis</h2>
-          <div class="publication-video">
-            <video autoplay controls muted loop playsinline preload="metadata" style="width: 100%; height: auto;">
-              <source src="static/videos/Attention.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="content has-text-justified" style="margin-top: 1rem;">
-            <p>
-               We analyze the learned policy behavior from both latent-space and visual-attention perspectives. The CVAE latent space forms a structured manifold aligned with steering direction, suggesting that the policy learns meaningful motion semantics rather than merely memorizing training samples.To interpret visual decision-making, we apply Grad-CAM to the visual backbone. During turning, the strongest response concentrates on the distant navigable lumen, while secondary activation appears along nearby haustral fold ridges. This indicates that ColoACT learns a geometry-aware navigation strategy that balances target-directed motion with boundary awareness.
-            </p>
-          </div>
+<!-- Visualization and Stability Analysis -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Multi-Cue Perception and Stability Analysis</h2>
+        <div class="content has-text-centered">
+          <figure class="project-figure">
+            <div class="project-media-frame">
+              <img src="static/images/Visualization and Stability Analysis.jpg" alt="ColoACT method figure" loading="lazy" />
+            </div>
+            <figcaption class="project-caption long-caption">
+              <strong>RGB-D-E Perception and Stability Analysis.</strong>
+              ColoACT augments RGB endoscopic images with estimated relative depth and pseudo-elevation cues. The elevation map enhances high-frequency geometric structures such as fold ridges and local surface relief that are subtle in the raw depth map. Temporal standard-deviation heatmaps and cross-sectional profiles show that the depth and elevation cues remain spatially consistent over static frames, while the dynamic sequence demonstrates stable evolution of geometric features as the robot approaches a fold.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Colonoscopic images often contain weak texture, specular highlights, and subtle geometric boundaries, making pure RGB perception unreliable for autonomous navigation. To provide more stable geometric cues, ColoACT augments RGB images with estimated relative depth and a gradient-based pseudo-elevation map. The relative depth map captures coarse lumen geometry, while the pseudo-elevation map emphasizes high-frequency structures such as haustral fold ridges and local surface relief. We further evaluate the temporal stability of these cues under both static and dynamic conditions. The results show that the extracted geometric structures remain spatially localized over time, providing robust navigation-relevant features for closed-loop control.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End Attention Video -->
+<!-- End Visualization and Stability Analysis -->
 
 
 
@@ -414,6 +417,68 @@
 
 
 
+<!-- Navigation in Complex Colon Geometry -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Navigation in Complex Colon Geometry</h2>
+        <div class="content has-text-centered">
+          <figure class="project-figure">
+            <div class="project-media-frame">
+              <img src="static/images/Complex Colon.jpg" alt="ColoACT success rate figure" loading="lazy" />
+            </div>
+            <figcaption class="project-caption long-caption">
+              <strong>Navigation in Complex Colon Geometry.</strong>
+              ColoACT is evaluated in highly tortuous ex-vivo porcine colons, including a sharp 90-degree turn / double-bend sequence and an extreme triple-bend segment. The red boxes mark the robot position over time, while the normalized angular velocity profiles show how the policy adapts its steering commands to the physical curvature of the colon. The smooth polarity changes and sustained steering phases indicate that ColoACT can handle continuous geometric constraints beyond simple straight or single-turn navigation.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+              To evaluate ColoACT under highly tortuous colonic anatomy, we tested the robot in sharp 90-degree turns, consecutive double-bend paths, and extreme triple-bend segments. These scenarios require the policy to continuously adapt its steering direction while maintaining smooth actuation in contact-rich tissue environments. The normalized angular velocity profiles show a strong correspondence with the physical curvature of the colon. In the 90-degree and double-bend cases, the policy first executes a sharp steering response and then transitions smoothly into sustained turning for the following bend. In the triple-bend case, the policy produces multi-stage polarity reversals, indicating adaptive steering across consecutive bends.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Navigation in Complex Colon Geometry -->
+
+
+
+<!-- Offline Ablation and Chunk-Horizon Rollout -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Offline Ablation and Chunk-Horizon Rollout</h2>
+        <div class="content has-text-centered">
+          <figure class="project-figure">
+            <div class="project-media-frame">
+              <img src="static/images/Offline Ablation and Chunk-Horizon Rollout.jpg " alt="BC and ColoACT comparison in weak-texture colon" loading="lazy" />
+            </div>
+            <figcaption class="project-caption long-caption">
+              <strong>Offline Ablation and Chunk-Horizon Rollouts.</strong>
+              Temporal ensembling suppresses high-frequency oscillations in predicted angular velocity by averaging overlapping action chunks over a 16-step window. Open-loop rollouts in normalized kinematic space show that the predicted action chunks follow the curvature trend of expert demonstrations. Compared with RGB and RGB-D inputs, RGB-D-E improves ADE and FDE, indicating that pseudo-elevation cues help the policy preserve navigation-relevant geometric structure.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            We analyze how action chunking and temporal ensembling improve control stability. Without temporal ensembling, the raw predicted angular velocity exhibits high-frequency oscillations, which can reduce video stability and increase mechanical stress. By aggregating overlapping predictions over a 16-step sliding window, ColoACT effectively filters stochastic prediction noise and produces smoother steering commands. We also evaluate chunk-level open-loop rollout fidelity in normalized kinematic space. The RGB-D-E policy achieves lower ADE and FDE than RGB and RGB-D variants, indicating that the pseudo-elevation cue helps preserve high-frequency geometric information and better align predicted motion with expert curvature trends.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Offline Ablation and Chunk-Horizon Rollout -->
+
+
+
+
+
+
 <!-- Comparison -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -443,6 +508,32 @@
 </section>
 <!-- End Comparison -->
 
+
+
+<!-- Attention Video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Attention Analysis</h2>
+          <div class="publication-video">
+            <video autoplay controls muted loop playsinline preload="metadata" style="width: 100%; height: auto;">
+              <source src="static/videos/Attention.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="content has-text-justified" style="margin-top: 1rem;">
+            <p>
+               We analyze the learned policy behavior from both latent-space and visual-attention perspectives. The CVAE latent space forms a structured manifold aligned with steering direction, suggesting that the policy learns meaningful motion semantics rather than merely memorizing training samples.To interpret visual decision-making, we apply Grad-CAM to the visual backbone. During turning, the strongest response concentrates on the distant navigable lumen, while secondary activation appears along nearby haustral fold ridges. This indicates that ColoACT learns a geometry-aware navigation strategy that balances target-directed motion with boundary awareness.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Attention Video -->
 
 
 
